@@ -7,7 +7,7 @@
 ---
 - 需要科学上网
 - 需要拥有你自己的API-KEY
--- API-KEY从这里获取：https://platform.openai.com/account/api-keys
+[API-KEY获取](https://platform.openai.com/account/api-keys)
 
 
 ---
