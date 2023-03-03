@@ -4,13 +4,29 @@ from utils import save_json, load_json
 
 path = os.path.expanduser('~')
 record_path = '{}{}{}'.format(path, os.sep, '.chatgpt/records')
+config_path = '{}{}{}'.format(path, os.sep, '.chatgpt/config')
+api_path = '{}{}{}'.format(config_path, os.sep, 'api_conf.json')
 
 
-# record_path = 'chat_record'
 record_name = 'cache'
 if not os.path.exists(record_path):
     os.makedirs(record_path)
 
+if not os.path.exists(config_path):
+    os.makedirs(config_path)
+
+
+print('='*30 + ' ChatGPT ' + '='*30)
+
+# Set your api-key
+if not os.path.exists(api_path):
+    print(f'The API config file [{api_path}] is not existed. Please input your api-key.')
+    api_key = input()
+    save_json(api_path, {'api_key': api_key})
+else:
+    api_key = load_json(api_path)
+
+openai.api_key = api_key
 
 
 def get_path_and_log(data_name=None):
@@ -62,12 +78,6 @@ def get_path_and_log(data_name=None):
         
 
     
-
-
-# Set up OpenAI API key
-api_key = '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'
-openai.api_key = api_key
-
 # Function to send a message to the OpenAI chatbot model and return its response
 def send_message(message_log):
     # Use OpenAI's ChatCompletion API to get the chatbot's response
@@ -76,7 +86,7 @@ def send_message(message_log):
         messages=message_log,   # The conversation history up to this point, as a list of dictionaries
         # max_tokens=4096,        # The maximum number of tokens (words or subwords) in the generated response
         # stop=None,              # The stopping sequence for the generated response, if any (not used here)
-        # temperature=0.7,        # The "creativity" of the generated response (higher temperature = more creative)
+        temperature=0.7,        # The "creativity" of the generated response (higher temperature = more creative)
     )
 
     # Find the first response from the chatbot that has text in it (some responses may not have text)
@@ -94,7 +104,6 @@ def main(data_name=None):
     # Set a flag to keep track of whether this is the first request in the conversation
     first_request = True
 
-    print('='*30 + ' ChatGPT ' + '='*30)
     new_path, message_log = get_path_and_log(data_name)
 
     # Start a loop that runs until the user types "quit"
