@@ -6,6 +6,9 @@
 【需要科学上网】
 ---
 
+【需要拥有你自己的API-KEY】
+---
+
 1、运行时，首次输入 API-KEY 后，保存于 C:\Users\001\\.chatgpt\config 文件夹下
 
 2、你可以创建专属于你自己的数据集，输入数据集名称后，保存于 C:\Users\001\\.chatgpt\records 文件夹下 (默认名称为cache.json)
