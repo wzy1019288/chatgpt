@@ -24,9 +24,11 @@ if not os.path.exists(api_path):
     api_key = input()
     save_json(api_path, {'api_key': api_key})
 else:
+    print(f'The API config file [{api_path}] is existed. If the api_key is wrong, please change the config.')
     api_key = load_json(api_path)['api_key']
 
 openai.api_key = api_key
+
 
 
 def get_path_and_log(data_name=None):
@@ -39,12 +41,12 @@ def get_path_and_log(data_name=None):
 
     existed_train_data = [js.split('.')[0] for js in os.listdir(record_path) if js != 'cache.json']
     if len(existed_train_data) > 0:
-        print('Now we have trained data:')
+        print('Now we have trained chat_data:')
         for i in range(len(existed_train_data)):
             print(f'[{i+1}] {existed_train_data[i]}')
         
         # 选择旧的数据继续训练
-        print("\nIf you want to choose a trained data, please input the Number.\nOr you can input any word or press 'Enter' to continue.")
+        print("\nIf you want to choose a trained chat_data, please input the Number.\nOr you can input any word or press 'Enter' to continue.")
         while True:
             number = input()
             try:
@@ -62,7 +64,7 @@ def get_path_and_log(data_name=None):
                 break
 
     # 使用新的数据重新训练
-    print("\nIf you want to create a new data, please input the date name, like 'TEST1'.\nOr you can press 'Enter' to continue.")
+    print("\nIf you want to create a new chat_data, please input the date name, like 'TEST1'.\nOr you can press 'Enter' to continue.")
     data_name = input()
 
     if data_name != '':
