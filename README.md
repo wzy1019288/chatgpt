@@ -6,8 +6,7 @@
 【使用条件】
 ---
 - 需要科学上网
-- 需要拥有你自己的API-KEY
-[API-KEY获取](https://platform.openai.com/account/api-keys)
+- 需要拥有你自己的API-KEY ([API-KEY获取](https://platform.openai.com/account/api-keys))
 
 
 ---
