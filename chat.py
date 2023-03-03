@@ -41,7 +41,7 @@ def get_path_and_log(data_name=None):
 
     existed_train_data = [js.split('.')[0] for js in os.listdir(record_path) if js != 'cache.json']
     if len(existed_train_data) > 0:
-        print('Now we have trained chat_data:')
+        print('\nNow we have trained chat_data:')
         for i in range(len(existed_train_data)):
             print(f'[{i+1}] {existed_train_data[i]}')
         
