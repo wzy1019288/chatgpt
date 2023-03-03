@@ -3,12 +3,11 @@
 【如果有专业问题，需要持续性的提问，可以将你们的对话保存本地，便于下次打开调用】
 ---
 
-【需要科学上网】
+【使用条件】
 ---
-
-【需要拥有你自己的API-KEY】
----
-- API-KEY从这里获取：https://platform.openai.com/account/api-keys
+- 需要科学上网
+- 需要拥有你自己的API-KEY
+-- API-KEY从这里获取：https://platform.openai.com/account/api-keys
 
 
 ---
