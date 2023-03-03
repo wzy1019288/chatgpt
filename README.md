@@ -8,6 +8,8 @@
 
 【需要拥有你自己的API-KEY】
 ---
+API-KEY从这里获取：https://platform.openai.com/account/api-keys
+
 
 1、运行时，首次输入 API-KEY 后，保存于 C:\Users\001\\.chatgpt\config 文件夹下
 
