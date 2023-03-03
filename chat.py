@@ -24,7 +24,7 @@ if not os.path.exists(api_path):
     api_key = input()
     save_json(api_path, {'api_key': api_key})
 else:
-    api_key = load_json(api_path)
+    api_key = load_json(api_path)['api_key']
 
 openai.api_key = api_key
 
